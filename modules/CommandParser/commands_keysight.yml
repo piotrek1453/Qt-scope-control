@@ -1,0 +1,31 @@
+# Example command list for Keysight scopes (tested on DSOX4024A, DSOX1204G)
+utils:
+  autoscale: :AUToscale
+
+channels:
+  # toggle or check current channel display state
+  display_state: :CHANnel{channel_number}:DISPlay {display_state}
+  states:
+    on: ON
+    off: OFF
+  scale:
+    vertical: :CHANnel{channel_number}:SCALe {scale_value}
+    horizontal: :TIMebase:RANGe {scale_value}
+  offset:
+    vertical: :CHANnel{channel_number}:OFFSet {offset_value}
+    horizontal: :TIMebase:POSition {offset_value}
+
+acquisition:
+  mode: :ACQuire:TYPE {acquire_mode}
+  types:
+    - NORMal
+    - AVERage
+    - HRESolution
+  acq_count: :ACQuire:COUNt {count}
+
+measurements:
+  # command to request measurement result. if not needed, set to ""
+  get_result: ""
+  voltage_rms: :MEASure:VRMS
+  frequency: :MEASure:FREQuency
+  source_channel: :MEASure:SOURce CHANnel{channel_number}
