@@ -1,0 +1,31 @@
+# Example command list for Tektronix TDS3000 series oscilloscopes
+utils:
+  autoscale: :AUTOSET EXECUTE
+
+channels:
+  # toggle or check current channel display state
+  display_state: :SELECT:CH{channel_number} {display_state}
+  states:
+    on: ON
+    off: OFF
+  scale:
+    vertical: :CH{channel_number}:SCALe {scale_value}
+    horizontal: :HORizontal:SCAle {scale_value}
+  offset:
+    vertical: :CH{channel_number}:OFFSet {offset_value}
+    horizontal: :HORizontal:DELay:TIMe {offset_value}
+
+acquisition:
+  mode: :ACQuire:MODe {acquire_mode}
+  types:
+    - SAMple
+    - AVErage
+    - ENVelope
+  acq_count: :ACQuire:NUMAVg {count};:ACQuire:NUMENv {count}
+
+measurements:
+  # command to request measurement result. if not needed, set to ""
+  get_result: :MEASUrement:IMMed:VAL
+  voltage_rms: :MEASUrement:IMMed:TYPe RMS
+  frequency: :MEASurement:IMMed:TYPe FREQuency
+  source_channel: :MEASUrement:IMMed:SOURCE1 CH{channel_number}

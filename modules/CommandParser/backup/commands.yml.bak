@@ -1,0 +1,25 @@
+# Example command list for Keysight DSOX4024A
+utils:
+  autoscale: AUToscale
+
+channels:
+  # toggle or check current channel display state
+  display_state: CHANnel:{channel_number}:DISPlay
+  scale:
+    vertical: CHANnel:{channel_number}:SCALe
+    horizontal: TIMebase:RANGe
+  offset:
+    vertical: CHANnel:{channel_number}:OFFSet
+    horizontal: TIMebase:POSition
+
+acquisition:
+  mode: ACQuire:TYPE
+  types:
+    normal: NORMal
+    average: AVERage
+    high_resolution: HRESolution
+
+measurements:
+  voltage_rms: MEASure:VRMS
+  frequency: MEASure:FREQuency
+  source_channel: MEASure:SOURce CHANnel

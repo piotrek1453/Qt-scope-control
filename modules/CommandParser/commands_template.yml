@@ -1,0 +1,31 @@
+# Empty command list to prepare for other devices
+utils:
+  autoscale:
+
+channels:
+  # toggle or check current channel display state
+  display_state: # placeholders: {channel_number}, {display_state}
+  states:
+    on:
+    off:
+  scale:
+    vertical: # placeholders: {channel_number}, {scale_value}
+    horizontal: # placeholder: {scale_value}
+  offset:
+    vertical: # placeholders {channel_number}, {offset_value}
+    horizontal: # placeholders {offset_value}
+
+acquisition:
+  mode: #placeholder {acquire_mode}
+  types: # i.e.
+    - NORMal
+    - AVERage
+    - HRESolution
+  acq_count: # placeholder: {count}
+
+measurements:
+  # command to request measurement result. if not needed, set to ""
+  get_result: ""
+  voltage_rms:
+  frequency:
+  source_channel: # placeholder: {channel_number}

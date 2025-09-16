@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>880</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">QtScopeControl</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="1" column="0" colspan="2">
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_11">
+       <item row="0" column="0">
+        <widget class="QFrame" name="ScaleFrame">
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QGroupBox" name="ScaleGroupbox">
+            <property name="title">
+             <string>Skala</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_4">
+             <item row="0" column="1">
+              <widget class="QGroupBox" name="HScaleGroupbox">
+               <property name="title">
+                <string>Pozioma</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_6">
+                <item row="1" column="0">
+                 <widget class="QLCDNumber" name="HScaleLCD"/>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QDial" name="HScaleDial">
+                  <property name="minimum">
+                   <number>1</number>
+                  </property>
+                  <property name="maximum">
+                   <number>1001</number>
+                  </property>
+                  <property name="pageStep">
+                   <number>1</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QComboBox" name="HScaleComboBox">
+                  <item>
+                   <property name="text">
+                    <string>ps</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ns</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>us</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ms</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>s</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QGroupBox" name="VScaleGroupbox">
+               <property name="title">
+                <string>Pionowa</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_5">
+                <item row="4" column="0">
+                 <widget class="QComboBox" name="VScaleComboBox">
+                  <item>
+                   <property name="text">
+                    <string>mV</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>V</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLCDNumber" name="VScaleLCD"/>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QDial" name="VScaleDial">
+                  <property name="minimum">
+                   <number>1</number>
+                  </property>
+                  <property name="maximum">
+                   <number>1001</number>
+                  </property>
+                  <property name="pageStep">
+                   <number>1</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QFrame" name="OffsetFrame">
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QGroupBox" name="OffsetGroupbox">
+            <property name="title">
+             <string>Przesunięcie</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_7">
+             <item row="0" column="0">
+              <widget class="QGroupBox" name="VOffsetGroupbox">
+               <property name="title">
+                <string>Pionowe</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_8">
+                <item row="0" column="0">
+                 <widget class="QDial" name="VOffsetDial">
+                  <property name="minimum">
+                   <number>-1001</number>
+                  </property>
+                  <property name="maximum">
+                   <number>1001</number>
+                  </property>
+                  <property name="pageStep">
+                   <number>1</number>
+                  </property>
+                  <property name="value">
+                   <number>0</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLCDNumber" name="VOffsetLCD"/>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QComboBox" name="VOffsetComboBox">
+                  <item>
+                   <property name="text">
+                    <string>mV</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>V</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QGroupBox" name="groupBox_4">
+               <property name="title">
+                <string>Poziome</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_9">
+                <item row="0" column="0">
+                 <widget class="QDial" name="HOffsetDial">
+                  <property name="minimum">
+                   <number>-1001</number>
+                  </property>
+                  <property name="maximum">
+                   <number>1001</number>
+                  </property>
+                  <property name="pageStep">
+                   <number>1</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLCDNumber" name="HOffsetLCD"/>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QComboBox" name="HOffsetComboBox">
+                  <item>
+                   <property name="text">
+                    <string>ps</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ns</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>us</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ms</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>s</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Policy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="ViClearPushButton">
+      <property name="text">
+       <string>Czyszczenie bufora VI</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QFrame" name="MeasurementsFrame">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout" rowstretch="1,5">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="ConnectionGroupbox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Połączenie</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_10">
+          <item row="0" column="0" rowspan="2">
+           <widget class="QPlainTextEdit" name="InstrumentStringTextEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="ConnectPushButton">
+            <property name="text">
+             <string>Połącz</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="DisconnectPushButton">
+            <property name="text">
+             <string>Rozłącz</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="MeasurementsGroupbox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Pomiary</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="2" column="4">
+           <widget class="QPushButton" name="ChannelVisibilityDisablePushButton">
+            <property name="text">
+             <string>Wyłącz</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="5" rowspan="3">
+           <spacer name="verticalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Policy::Minimum</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="8" rowspan="3">
+           <widget class="QPushButton" name="AutoscalePushbutton">
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	background-color: black;
+	color: rgb(255, 85, 0);
+}
+
+QPushButton:hover {
+	background-color: grey;
+}
+
+QPushButton:pressed {
+	background-color: white;
+}</string>
+            </property>
+            <property name="text">
+             <string>Automatyczne
+ustawienie</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="6">
+           <widget class="QPushButton" name="AcqModePushbutton">
+            <property name="text">
+             <string>Tryb akwizycji</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLCDNumber" name="VrmsLCD">
+            <property name="digitCount">
+             <number>9</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="7" rowspan="3">
+           <spacer name="verticalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Policy::Minimum</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="1" rowspan="3">
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Policy::Minimum</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLCDNumber" name="FrequencyLCD">
+            <property name="digitCount">
+             <number>9</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4">
+           <widget class="QPushButton" name="ChannelVisibilityEnablePushButton">
+            <property name="text">
+             <string>Włącz</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="6">
+           <widget class="QComboBox" name="AcqModeComboBox">
+            <property name="editable">
+             <bool>false</bool>
+            </property>
+            <property name="currentText">
+             <string>NORMal</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>NORMal</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>AVERage</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>HRESolution</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="VrmsPushbutton">
+            <property name="text">
+             <string>Napięcie RMS</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3" rowspan="3">
+           <spacer name="verticalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Policy::Minimum</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="6">
+           <widget class="QSpinBox" name="AcqCountSpinBox">
+            <property name="specialValueText">
+             <string/>
+            </property>
+            <property name="minimum">
+             <number>2</number>
+            </property>
+            <property name="maximum">
+             <number>512</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="FrequencyPushbutton">
+            <property name="text">
+             <string>Częstotliwość</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="QSpinBox" name="ChannelSpinbox">
+            <property name="specialValueText">
+             <string>Kanał</string>
+            </property>
+            <property name="maximum">
+             <number>4</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="FrequencyResultLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+	font-weight: bold;
+	text-align: center;
+}</string>
+            </property>
+            <property name="text">
+             <string>Jednostka</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLabel" name="VrmsResultLabel">
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+	font-weight: bold;
+	text-align: center;
+}</string>
+            </property>
+            <property name="text">
+             <string>Jednostka</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QTextEdit" name="logTextEdit"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
