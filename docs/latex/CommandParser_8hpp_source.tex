@@ -1,0 +1,28 @@
+\doxysection{Command\+Parser.\+hpp}
+\hypertarget{CommandParser_8hpp_source}{}\label{CommandParser_8hpp_source}\index{modules/CommandParser/inc/CommandParser.hpp@{modules/CommandParser/inc/CommandParser.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <c4/format.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <ryml.hpp>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <ryml\_std.hpp>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }CommandParser\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }CommandParser\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ CommandParser();}
+\DoxyCodeLine{00015\ \ \ \string~CommandParser();}
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{void}\ ReadYaml(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ filename[]);}
+\DoxyCodeLine{00017\ \ \ c4::yml::Tree\ GetCommandTree();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ ryml::Tree\ tree;}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ \}\ \textcolor{comment}{//\ namespace\ CommandParser}}
+
+\end{DoxyCode}
