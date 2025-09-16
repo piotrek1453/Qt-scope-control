@@ -1,3 +1,5 @@
-find Qt-scope-control/modules -name "*.cpp" -or -name "*.hpp" -or -name "*.h" | xargs clang-format -i
+#!/usr/bin/env bash
+find modules -name "*.cpp" -or -name "*.hpp" -or -name "*.h" | xargs clang-format -i
 
-doxygen "../docs/Doxyfile"
+doxygen "docs/Doxyfile"
+git add docs/html docs/latex

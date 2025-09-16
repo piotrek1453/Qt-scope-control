@@ -1,0 +1,75 @@
+\doxysection{mainwindow.\+h}
+\hypertarget{mainwindow_8h_source}{}\label{mainwindow_8h_source}\index{modules/OscilloscopeGUI/mainwindow.h@{modules/OscilloscopeGUI/mainwindow.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}CommandParser.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}InstrumentControl.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}oscilloscope\_utils.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QApplication>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QFileDialog>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QTextEdit>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QTextStream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <regex>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <spdlog/sinks/base\_sink.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <spdlog/sinks/stdout\_color\_sinks.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <spdlog/spdlog.h>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }MainWindow;}
+\DoxyCodeLine{00021\ \}}
+\DoxyCodeLine{00022\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }MainWindow\ :\ \textcolor{keyword}{public}\ QMainWindow\ \{}
+\DoxyCodeLine{00025\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ MainWindow(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00029\ \ \ \string~MainWindow();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{void}\ setupLogging(QTextEdit\ *textEdit);}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{void}\ scopeSetup(ViChar\ scope\_string[]);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{void}\ on\_AutoscalePushbutton\_clicked();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{void}\ on\_DisconnectPushButton\_clicked();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{void}\ on\_ConnectPushButton\_clicked();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ on\_FrequencyPushbutton\_clicked();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{void}\ on\_VrmsPushbutton\_clicked();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{void}\ on\_ChannelSpinbox\_valueChanged();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ on\_AcqModePushbutton\_clicked();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{void}\ on\_ViClearPushButton\_clicked();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ on\_ChannelVisibilityEnablePushButton\_clicked();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{void}\ on\_ChannelVisibilityDisablePushButton\_clicked();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordtype}{void}\ on\_VScaleDial\_valueChanged(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ on\_VOffsetDial\_valueChanged(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{void}\ on\_HScaleDial\_valueChanged(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{void}\ on\_HOffsetDial\_valueChanged(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00064\ \ \ Ui::MainWindow\ *ui;}
+\DoxyCodeLine{00065\ \ \ QString\ commands\_filename;}
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{classInstrumentControl_1_1InstrumentControl}{InstrumentControl::InstrumentControl}}\ scope;}
+\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{classCommandParser_1_1CommandParser}{CommandParser::CommandParser}}\ commands\_tree;}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ MAINWINDOW\_H}}
+
+\end{DoxyCode}

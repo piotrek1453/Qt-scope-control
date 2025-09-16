@@ -1,0 +1,86 @@
+\doxysection{Instrument\+Control.\+hpp}
+\hypertarget{InstrumentControl_8hpp_source}{}\label{InstrumentControl_8hpp_source}\index{modules/InstrumentControl/inc/InstrumentControl.hpp@{modules/InstrumentControl/inc/InstrumentControl.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*********************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \(\backslash\)file\ \ \ InstrumentControl.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \(\backslash\)brief\ \ Header\ file\ for\ the\ InstrumentControl\ class}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \(\backslash\)author\ Piotr}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \(\backslash\)date\ \ \ March\ 2024}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *********************************************************************/}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <cstdbool>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <spdlog/sinks/stdout\_color\_sinks.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <spdlog/spdlog.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <visa.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <visatype.h>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ BUFFER\_SIZE\_B\ =\ 8000;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ ViRsrc\ ViConstRsrc}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ ViBuf\ ViConstBuf}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }InstrumentControl\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }InstrumentControl\ \{}
+\DoxyCodeLine{00029\ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ \ \ *\ PRIVATE\ VARIABLES\ BEGIN}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ ViSession\ instrument;}
+\DoxyCodeLine{00034\ \ \ ViChar\ buffer[BUFFER\_SIZE\_B]\ =\ \{0\};}
+\DoxyCodeLine{00035\ \ \ ViUInt32\ io\_bytes;}
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{const}\ ViAccessMode\ access\_mode\ =\ VI\_NULL;}
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{const}\ ViUInt32\ timeout\_ms\ =\ 200;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ std::string\ resource\_string;}
+\DoxyCodeLine{00040\ \ \ std::vector<ViChar>\ ID\_string;}
+\DoxyCodeLine{00041\ \ \ ViSession\ resource\_manager;}
+\DoxyCodeLine{00042\ \ \ ViStatus\ status;}
+\DoxyCodeLine{00043\ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ \ \ *\ PRIVATE\ VARIABLES\ END}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ \ \ *\ PRIVATE\ METHODS\ BEGIN}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{00050\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ SetResourceString(ViChar\ ResourceString[]);}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{bool}\ ReadIDString();}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{void}\ SetIDString(ViChar\ IDString[]);}
+\DoxyCodeLine{00054\ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ \ \ *\ PRIVATE\ METHODS\ END}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ \ \ *\ PUBLIC\ METHODS\ BEGIN}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{00061\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00062\ \ \ InstrumentControl();}
+\DoxyCodeLine{00063\ \ \ \string~InstrumentControl();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ ViRsrc\ GetResourceString();}
+\DoxyCodeLine{00066\ \ \ std::string\ GetIDString();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordtype}{bool}\ Connect(ViChar\ ResourceString[]);}
+\DoxyCodeLine{00069\ \ \ \textcolor{keywordtype}{bool}\ Disconnect();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ std::tuple<bool,\ ViChar\ *>\ Query(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *scpi\_command);}
+\DoxyCodeLine{00072\ \ \ \textcolor{keywordtype}{bool}\ Write(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *scpi\_command);}
+\DoxyCodeLine{00073\ \ \ std::tuple<bool,\ ViChar\ *>\ Read();}
+\DoxyCodeLine{00074\ \ \ ViStatus\ ViClear();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ \ \ *\ PUBLIC\ METHODS\ END}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{00079\ \};\ \textcolor{comment}{//\ class\ InstrumentControl}}
+\DoxyCodeLine{00080\ \}\ \textcolor{comment}{//\ namespace\ InstrumentControl}}
+
+\end{DoxyCode}

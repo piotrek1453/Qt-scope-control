@@ -1,0 +1,21 @@
+\doxysection{oscilloscope\+\_\+utils.\+h}
+\hypertarget{oscilloscope__utils_8h_source}{}\label{oscilloscope__utils_8h_source}\index{modules/OscilloscopeGUI/oscilloscope\_utils.h@{modules/OscilloscopeGUI/oscilloscope\_utils.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}InstrumentControl.hpp"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <regex>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }oscilloscope\_utils\ \{}
+\DoxyCodeLine{00009\ std::tuple<double,\ int>\ convertMeasurementResult(\textcolor{keyword}{const}\ std::string\ \&input);}
+\DoxyCodeLine{00010\ std::string\ convertExponentToSI(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ exponent);}
+\DoxyCodeLine{00011\ \textcolor{keywordtype}{int}\ convertSIToExponent(std::string\ si);}
+\DoxyCodeLine{00012\ std::string\ viCharArrToString(\textcolor{keyword}{const}\ ViChar\ *);}
+\DoxyCodeLine{00013\ \};\ \textcolor{comment}{//\ namespace\ oscilloscope\_utils}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ OSCILLOSCOPE\_UTILS\_H}}
+
+\end{DoxyCode}
