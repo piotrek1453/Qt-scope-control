@@ -7,9 +7,7 @@
  *********************************************************************/
 #pragma once
 
-#include <cstdbool>
 #include <cstring>
-#include <iostream>
 #include <spdlog/sinks/stdout_color_sinks.h>
 #include <spdlog/spdlog.h>
 #include <tuple>

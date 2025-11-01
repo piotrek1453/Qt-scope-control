@@ -1,5 +1,7 @@
 #!/usr/bin/sh
 
+set -e
+
 # create build directory
 mkdir -p build
 # change directory to build

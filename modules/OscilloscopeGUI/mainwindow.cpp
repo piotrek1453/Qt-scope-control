@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "oscilloscope_utils.h"
+#include <regex>
 
 // Custom sink to log to QTextEdit
 template <typename Mutex>

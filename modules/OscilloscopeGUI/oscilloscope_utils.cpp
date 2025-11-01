@@ -1,4 +1,8 @@
 #include "oscilloscope_utils.h"
+#include <iostream>
+#include <regex>
+#include <set>
+#include <unordered_map>
 
 namespace oscilloscope_utils {
 // Define the set of valid SI exponents for SI prefixes (e.g., 10^3 for kilo,

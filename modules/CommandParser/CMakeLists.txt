@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.27)
 
 project(CommandParser)
 
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 if(RYML_BRANCH_NAME STREQUAL "")
   find_program(GIT git REQUIRED)
   execute_process(

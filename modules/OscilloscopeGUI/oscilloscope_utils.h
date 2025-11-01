@@ -1,9 +1,7 @@
 #pragma once
-#include "InstrumentControl.hpp"
 #include <math.h>
-#include <regex>
-#include <set>
-#include <stdexcept>
+#include <string>
+#include <visa.h>
 
 namespace oscilloscope_utils {
 std::tuple<double, int> convertMeasurementResult(const std::string &input);

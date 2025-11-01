@@ -2,15 +2,11 @@
 
 #include "CommandParser.hpp"
 #include "InstrumentControl.hpp"
-#include "oscilloscope_utils.h"
 #include <QApplication>
 #include <QFileDialog>
 #include <QMainWindow>
 #include <QTextEdit>
 #include <QTextStream>
-#include <memory>
-#include <mutex>
-#include <regex>
 #include <spdlog/sinks/base_sink.h>
 #include <spdlog/sinks/stdout_color_sinks.h>
 #include <spdlog/spdlog.h>
