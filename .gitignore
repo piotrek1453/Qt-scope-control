@@ -55,3 +55,6 @@ compile_commands.json
 
 # Output artifacts folder
 build/
+
+# any kind of cache, i.e. from clangd
+*.cache/
